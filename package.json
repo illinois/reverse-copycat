@@ -4,6 +4,7 @@
   "description": "> A small Github action for copying files during workflow runtime.",
   "main": "index.js",
   "scripts": {
+    "build": "npx @vercel/ncc build src/copy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,6 @@
   },
   "homepage": "https://github.com/illinois/local-copy#readme",
   "dependencies": {
-    "@actions/core": "^1.8.2"
+    "@actions/core": "^1.11.1"
   }
 }

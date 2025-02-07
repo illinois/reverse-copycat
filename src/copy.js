@@ -21,11 +21,11 @@ var copyRecursiveSync = function(src, dest) {
 	var isDirectory = fs.statSync(src).isDirectory();
 	if (isDirectory) {
 	  if (!fs.existsSync(dest)) {
-		fs.mkdirSync(dest);
+			fs.mkdirSync(dest, { recursive: true});
 	  }
+
 	  fs.readdirSync(src).forEach(function(child) {
-		copyRecursiveSync(path.join(src, child),
-						  path.join(dest, child));
+			copyRecursiveSync(path.join(src, child), path.join(dest, child));
 	  });
 	} else {
 	  fs.copyFileSync(src, dest);
